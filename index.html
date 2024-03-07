@@ -190,8 +190,73 @@
     $('#closingSegment').removeClass('d-none');
   }
 </script>
-<script>
-  // Your other JavaScript code goes here
+  <script>
+  let clickCount = 0;
+
+  $(document).ready(function () {
+    $('#shareBtn').click(function () {
+      updateProgress();
+    });
+  });
+
+function updateProgress() {
+    const info = $('#info');
+    if (Math.random() < 0.5 && clickCount != 0) {
+        // Ini adalah kata acak seolah pengguna belum share, jadi mesti diulang
+        info.html(ambilKalimatAcak('Mohon Bagikan ke Kontak berbeda#Kamu sudah Share ke Kontak ini#Bagikan ke Kontak Lain'));
+    }else{
+        clickCount++;
+        if (clickCount <= 10) {
+            const progress = $('#progress');
+            const percent = clickCount * 10;
+            progress.css('width', percent + '%').attr('aria-valuenow', percent).html(percent + '%');
+
+            const clicksLeft = 10 - clickCount;
+            info.html('Bagikan lagi untuk mencapai ' + clicksLeft + ' klik');
+        }
+      
+    }
+}
+
+function ambilKalimatAcak(stringInput) {
+  // Memisahkan kalimat-kalimat dari string
+  const kalimatArray = stringInput.split('#');
+
+  // Menghapus elemen array yang kosong (jika ada)
+  const kalimatArrayClean = kalimatArray.filter(kalimat => kalimat.trim() !== '');
+
+  // Memeriksa apakah ada kalimat yang tersedia
+  if (kalimatArrayClean.length === 0) {
+    return 'Tidak ada kalimat yang tersedia.';
+  }
+
+  // Mengambil satu kalimat secara acak
+  const indexRandom = Math.floor(Math.random() * kalimatArrayClean.length);
+  return kalimatArrayClean[indexRandom];
+}
+
+
+
+
+// Batas waktu dalam detik
+let totalTime = 300;
+
+function updateCountdown() {
+  const remainingTime = totalTime--;
+
+  if (remainingTime >= 0) {
+    $('#countdown').text(remainingTime + " Detik");
+  } else {
+    $('#countdown').text('Waktu habis!');
+    clearInterval(interval);
+  }
+}
+
+// Update countdown setiap 1 detik
+const interval = setInterval(updateCountdown, 1000);
+updateCountdown(); // Panggil untuk memastikan countdown muncul saat halaman dimuat
+
+// Your other JavaScript code goes here
 </script>
 </body>
 </html>
