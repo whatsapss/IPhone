@@ -51,11 +51,10 @@
                 untuk membuktikan bahwa ini Anda!
 
                 <p class="m-2">
-                    <input type="text" class="form-control" value="https://i-phone-snowy.vercel.app/?=ref=<?=$code?>" />
+                    <input id="refLink" type="text" class="form-control" value="" />
 
                     <div class="container">
-                        <a id="shareBtn" target="_blank" href="//wa.me?text=Saya mendapatkan IPHONE 15 PRO MAX Gratis dari GIVEAWAY Terpercaya ini %0A %0Ahttps://i-phone-snowy.vercel.app/?ref=<?=$code?>"
-                            class="btn btn-success btn-md animate__animated animate__heartBeat animate__infinite infinite">BAGIKAN KE WHATSAPP</a>
+                        <a id="shareBtn" target="_blank" href="#" class="btn btn-success btn-md animate__animated animate__heartBeat animate__infinite infinite">BAGIKAN KE WHATSAPP</a>
 
                         <div class="progress-container mt-3">
                             <div class="progress">
@@ -133,6 +132,10 @@
       const answer = $(this).text();
       answerQuestion(answer);
     });
+
+    $('#shareBtn').click(function () {
+      updateProgress();
+    });
   });
 
   function startAnswering() {
@@ -188,6 +191,23 @@
     // Your implementation to display answers
     $('#question-container').addClass('d-none');
     $('#closingSegment').removeClass('d-none');
+  }
+
+  function updateProgress() {
+    const info = $('#info');
+    const progress = $('#progress');
+
+    for (let i = 1; i <= 10; i++) {
+      setTimeout(function () {
+        const percent = i * 10;
+        progress.css('width', percent + '%').attr('aria-valuenow', percent).text(percent + '%');
+        if (i === 10) {
+          info.text('Berbagi selesai!');
+        } else {
+          info.text(`Berbagi: ${i}/10`);
+        }
+      }, i * 1000);
+    }
   }
 </script>
 <script>
