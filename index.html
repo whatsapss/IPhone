@@ -51,7 +51,7 @@
                 untuk membuktikan bahwa ini Anda!
 
                 <p class="m-2">
-                    <input type="text" class="form-control" value="https://i-phone-snowy.vercel.app/?=ref=<?=$code?>" />
+                    <input type="text" class="form-control" id="refLink" value="" />
 
                     <div class="container">
                         <a id="shareBtn" target="_blank" href="//wa.me?text=Saya mendapatkan IPHONE 15 PRO MAX Gratis dari GIVEAWAY Terpercaya ini %0A %0Ahttps://i-phone-snowy.vercel.app/?ref=<?=$code?>"
@@ -147,7 +147,19 @@
     
     // Display the first question
     displayQuestion();
-  }
+
+    // Generate random ref code
+    generateRandomRef();
+}
+
+function generateRandomRef() {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < 6; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    $('#refLink').val(`https://i-phone-snowy.vercel.app/?=ref=${result}`);
+}
 
   function displayQuestion() {
     const questionContainer = $('#question-container');
