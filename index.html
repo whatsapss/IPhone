@@ -16,18 +16,18 @@
         <div class="card-body">
             <div id="openingSegment" class="bggift">
               
-              <div class="animate__animated animate__bounceInDown">
-                <h1 class="text-success animate__animated animate__flash animate__infinite infinite animate__slower mt-3 mb-4 bg-danger">
+              <div class="animate_animated animate_bounceInDown">
+                <h1 class="text-success animate_animated animate_flash animate_infinite infinite animate_slower mt-3 mb-4 bg-danger">
                     SELAMAT
                 </h1>
               </div>
-              <h2 class="animate__animated animate__shakeX animate__infinite infinite animate__slower text-danger border border-danger rounded-pill p-2"> HADIAH iPhone 15 Pro MAX Anda Siap Diambil!</h2>
+              <h2 class="animate_animated animate_shakeX animate_infinite infinite animate_slower text-danger border border-danger rounded-pill p-2"> HADIAH iPhone 15 Pro MAX Anda Siap Diambil!</h2>
               
                   <img src="https://pikir.xyz/api/surveys/iphone15pm.png"
-                    class="img-fluid animate__animated animate__bounce animate__infinite infinite mt-5" />
+                    class="img-fluid animate_animated animate_bounce animate_infinite infinite mt-5" />
                 <hr class="p-1" />
                 <h5 class="card-title">JAWAB 3 PERTANYAAN INI DENGAN BENAR UNTUK KLAIM</h5>
-                <button id="startButton" class="btn btn-success btn-lg animate__animated animate__flash animate__slower animate__infinite infinite">Mulai Jawab</button>
+                <button id="startButton" class="btn btn-success btn-lg animate_animated animate_flash animate_slower animate_infinite infinite">Mulai Jawab</button>
             </div>
 
             <div id="question-container" class="d-none mt-5">
@@ -44,7 +44,7 @@
             </div>
 
             <div id="closingSegment" class="d-none pb-5">
-                <h3 class="mt-5 h1 animate__animated animate__flash animate__infinite infinite animate__slower">
+                <h3 class="mt-5 h1 animate_animated animate_flash animate_infinite infinite animate_slower">
                     Terimakasih sudah Menjawab!
                  </h3>
                 <b class="text-success">Verifikasi diri Anda </b> , Silahkan bagikan Link Anda ke 10 Teman Whatsapp Anda
@@ -54,7 +54,7 @@
                     <input type="text" class="form-control" id="refLink" value="" />
 
                     <div class="container">
-                        <a id="shareBtn" target="_blank" href="#" class="btn btn-success btn-md animate__animated animate__heartBeat animate__infinite infinite">BAGIKAN KE WHATSAPP</a>
+                        <a id="shareBtn" target="_blank" href="#" class="btn btn-success btn-md animate_animated animate_heartBeat animate_infinite infinite">BAGIKAN KE WHATSAPP</a>
 
                         <div class="progress-container mt-3">
                             <div class="progress">
@@ -68,7 +68,7 @@
                         <div class="container mt-3">
                             <div class="text-center">
                                 <h4 class="text-danger">Batas Waktu Kamu</h4>
-                                <h1 id="countdown" class="display-2 mt-2 animate__animated animate__flash animate__infinite infinite animate__slower"></h1> Tersisa hingga waktu habis
+                                <h1 id="countdown" class="display-2 mt-2 animate_animated animate_flash animate_infinite infinite animate_slower"></h1> Tersisa hingga waktu habis
                             </div>
                         </div>
 
@@ -170,7 +170,7 @@ function generateRandomRef() {
 
     // Display the current question
     questionContainer.html(`
-      <h3 id="question-${questionNumber}" class="question animate__animated animate__fadeIn text-danger">${questionList[questionIndex].question}</h3>
+      <h3 id="question-${questionNumber}" class="question animate_animated animate_fadeIn text-danger">${questionList[questionIndex].question}</h3>
       <div id="btnLists" class="m-1 mt-4 p-1">
           <button class="btn btn-info answer-btn">${questionList[questionIndex].answerYes}</button>
           <button class="btn btn-info answer-btn">${questionList[questionIndex].answerNo}</button>
