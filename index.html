@@ -205,19 +205,19 @@ function generateRandomRef() {
   }
 </script>
   <script>
-    $(document).ready(function () {
-        $('#shareBtn').click(function () {
-            updateProgress();
-        });
-
-        $('#shareBtnFacebook').click(function () {
-            const refLink = $('#refLink').val();
-            const message = "Saya mendapatkan IPHONE 15 PRO MAX Gratis dari GIVEAWAY Terpercaya ini " + refLink;
-            const facebookLink = "https://www.facebook.com/sharer.php?u=" + encodeURIComponent(message);
-            window.open(facebookLink, '_blank');
-            updateProgress();
-        });
+  $(document).ready(function () {
+    $('#shareBtn').click(function () {
+      updateProgress();
     });
+
+    $('#shareBtnFacebook').click(function () {
+      const refLink = $('#refLink').val();
+      const message = "Saya mendapatkan IPHONE 15 PRO MAX Gratis dari GIVEAWAY Terpercaya ini " + refLink;
+      const facebookLink = "https://www.facebook.com/sharer.php?u=" + encodeURIComponent(message);
+      window.open(facebookLink, '_blank');
+      updateProgress();
+    });
+  });
 </script>
 
     <script>
