@@ -213,7 +213,7 @@ function generateRandomRef() {
         $('#shareBtnFacebook').click(function () {
             const refLink = $('#refLink').val();
             const message = "Saya mendapatkan IPHONE 15 PRO MAX Gratis dari GIVEAWAY Terpercaya ini " + refLink;
-            const facebookLink = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(message);
+            const facebookLink = "https://www.facebook.com/sharer.php?u=" + encodeURIComponent(message);
             window.open(facebookLink, '_blank');
             updateProgress();
         });
