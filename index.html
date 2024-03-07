@@ -55,6 +55,8 @@
                     <input type="text" class="form-control" id="refLink" value="" />
 
                     <div class="container">
+                      <a id="shareBtnFacebook" target="_blank" href="#" class="btn btn-primary btn-md animate__animated animate__heartBeat animate__infinite infinite">BAGIKAN KE FACEBOOK</a>
+
                         <a id="shareBtn" target="_blank" href="#" class="btn btn-success btn-md animate__animated animate__heartBeat animate__infinite infinite">BAGIKAN KE WHATSAPP</a>
 
                         <div class="progress-container mt-3">
@@ -202,6 +204,22 @@ function generateRandomRef() {
     $('#closingSegment').removeClass('d-none');
   }
 </script>
+  <script>
+    $(document).ready(function () {
+        $('#shareBtn').click(function () {
+            updateProgress();
+        });
+
+        $('#shareBtnFacebook').click(function () {
+            const refLink = $('#refLink').val();
+            const message = "Saya mendapatkan IPHONE 15 PRO MAX Gratis dari GIVEAWAY Terpercaya ini " + refLink;
+            const facebookLink = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(message);
+            $(this).attr("href", facebookLink);
+            updateProgress();
+        });
+    });
+</script>
+
     <script>
         $(document).ready(function () {
     $('#shareBtn').click(function () {
