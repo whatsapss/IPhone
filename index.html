@@ -280,5 +280,18 @@ updateCountdown(); // Panggil untuk memastikan countdown muncul saat halaman dim
 
 // Your other JavaScript code goes here
 </script>
+  <script>
+// Menonaktifkan klik kanan
+document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+});
+
+// Menonaktifkan view source
+document.addEventListener('keydown', function (e) {
+    if (e.ctrlKey && (e.which === 85 || e.which === 83)) {
+        e.preventDefault();
+    }
+});
+</script>
 </body>
 </html>
